@@ -61,7 +61,7 @@ void DisplayArray(int* a, int n)
 	for (int i = 0; i < n; i++)
 	{
 		cout << "arr[" << i + 1 << "]=";
-		cout << a[i] << "\n";
+		cout << *a++ << "\n";
 	}
 
 }
@@ -71,9 +71,9 @@ void NewSortedArray(int* a, int* b, int n, int& s)
 	int k = 0;
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = i + 1; j < n ; j++)
+		for (int j = i + 1; j < n; j++)
 		{
-			if (a[i] == a[j])
+			if (*(a + i) == *(a + j))
 			{
 				k++; break;
 			}
@@ -82,8 +82,10 @@ void NewSortedArray(int* a, int* b, int n, int& s)
 		}
 		if (!k)
 		{
-			b[s] = a[i];
+			*(b + s) = *(a + i);
 			s++;
+
+			
 		}
 		k = 0;
 		
