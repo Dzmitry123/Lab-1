@@ -7,19 +7,27 @@ void NewSortedArray(int*, int*, int, int&);
 void Swap(int&, int&);
 int main()
 {
-	int n, s = 0;
-	cout << "enter the size of array:\n";
-	cin >> n;
-	int*a = new int[n];
-	int*b = new int[];
-	EnterArray(a, n);
-	QuickSort(a, 0, n - 1);
-	cout << "sourted array:\n";
-	DisplayArray(a, n);
-	NewSortedArray(a, b, n, s);
-	cout << "new sourted array:\n";
-	DisplayArray(b, s);
-	system("pause");
+	while (true)
+	{
+		int n, k, s = 0;
+		cout << "enter the size of array:\n";
+		cin >> n;
+		int*a = new int[n];
+		int*b = new int[];
+		EnterArray(a, n);
+		QuickSort(a, 0, n - 1);
+		cout << "sourted array:\n";
+		DisplayArray(a, n);
+		NewSortedArray(a, b, n, s);
+		cout << "new sourted array:\n";
+		DisplayArray(b, s);
+		system("pause");
+		system("cls");
+		cout << "Do you want to continue?\n";
+		cout << "1.yes 2.no\n";
+		cin >> k;
+		if (k == 2)break;
+	}
 	return 0;
 }
 
