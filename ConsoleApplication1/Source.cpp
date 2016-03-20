@@ -5,15 +5,17 @@ void DisplayArray(int* , int);
 void QuickSort(int* , int, int);
 void NewSortedArray(int*, int*, int, int&);
 void Swap(int&, int&);
+int dimention(int, int);
 int main()
 {
 	while (true)
 	{
-		int n, k, s = 0;
+		const int N = 100;
+		int n, k, s = 0, l = 0;
 		cout << "enter the size of array:\n";
-		cin >> n;
+		n = dimention(N, l);
 		int*a = new int[n];
-		int*b = new int[];
+		int*b = new int[n];
 		EnterArray(a, n);
 		QuickSort(a, 0, n - 1);
 		cout << "sourted array:\n";
@@ -30,7 +32,19 @@ int main()
 	}
 	return 0;
 }
-
+int dimention(int N, int l)
+{
+	while (true)
+	{
+		cout << "enter 0 < n <= " << N << endl;
+		cin >> l;
+		if (l > 0 && l <= N)
+		{
+			return l;
+			break;
+		}
+	}
+} 
 void EnterArray(int* a, int n)
 {
 	for (int i = 0; i < n; i++)
